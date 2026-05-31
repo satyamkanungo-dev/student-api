@@ -30,7 +30,7 @@ func main() {
 	// router setup
 	router := http.NewServeMux()
 	router.HandleFunc("POST /api/students", student.NewStudent(storage))
-
+	router.HandleFunc("GET /api/students/{id}", student.GetById(storage))
 	// server setup
 	// using go routines and channel
 
